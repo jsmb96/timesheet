@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Django Generated{% endblock title %}</title>
+</head>
+<body>
+    <div>
+        <table width="100%">
+            <tr>
+                <td colspan="75%"><a href="{% url 'profiles:profile_list' %}"> HOME </a></td>
+                <td colspan="25%">
+                    {% if profile.is_authenticated %}
+                        <p><a class="" href="{% url 'logout' %}">Log Out</a></p>
+                    {% else %}
+                        <p><a href="{% url 'login' %}">Log In</a></p>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <>
+    <div>
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+</body>
+</html>
