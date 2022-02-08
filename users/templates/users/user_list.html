@@ -1,0 +1,16 @@
+{% extends '../base.html' %}
+
+{% block title %}User List{% endblock title %}
+
+{% block content %}
+    {% if users %}
+        <table>
+        {% for users in users %}
+<!--            <tr><td>&nbsp;&nbsp;&nbsp;</td><td><a href="{% url 'users:user_detail' users.id %}">{{ user.title }}</a></td>-->
+<!--                <td><a href="{% url 'users:user_update' user.id %}" > Edit </a></td></tr>-->
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>No users are available.</p>
+    {% endif %}
+{% endblock content %}
