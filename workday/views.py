@@ -6,4 +6,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Welcome the workday index.")
+    return HttpResponse("Welcome to workday.")
