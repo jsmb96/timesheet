@@ -5,7 +5,7 @@ from django.db import models
 class User(models.Model):
     fname = models.CharField(default='Blank',max_length=50)
     lname = models.CharField(default='Blank', max_length=50)
-    id_number = models.IntegerField(default=0)
+    id_number = models.IntegerField(default=0) # is it your PK ??
     email = models.CharField(default='Blank',max_length=50)
 
     def __str__(self):
