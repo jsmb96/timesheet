@@ -23,7 +23,7 @@ class Workday(models.Model):
     sector = models.CharField(max_length = 20)
     # hours_code = models.CharField(max_length = 5)
     hours_code = forms.CharField(label='Hours Code', widget=forms.Select(choices=PAYROLL))
-    FBP_payroll = models.CharField(default='$', max_length = 5)
+    FBP_payroll = models.CharField(default='$', max_length = 5) # Now you have the HoursCode, you don't need these 2 parameters 
     AMCO_payroll = models.CharField(default='$', max_length = 5)
 
     def get_absolute_url (self) :
