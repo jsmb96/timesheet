@@ -1,0 +1,35 @@
+{% extends '../base_workday.html' %}
+
+{% block title %}Workday Detail{% endblock title %}
+
+{% block content %}
+<!--    {% if user == object.user %}-->
+<!--        <h3><a href="{% url 'workday:workday_update' object.id %}">Update Workday Information</a></h3>-->
+<!--    {% endif %}-->
+    <h2>{{ object.file_number }}</h2>
+    <table>
+        <tr>
+            <td><b> Workday Address </b></td>
+            <td>&nbsp;&nbsp;</td>
+            <td>{{ object.file_number }}, {{ object.profile }}, {{ object.time_in }}
+            <br>{{ object.time_out }}, {{ object.location }} - {{ object.sector }}
+            <br>{{ object.hours_code }}</td>
+        </tr>
+        <tr>
+            <td><b> Workday URL </b></td>
+            <td>&nbsp;&nbsp;</td>
+            <td>{{ object.url }}</td>
+        </tr>
+    </table>
+<!--    <br>-->
+<!--    {% if object.file_number.all  %}-->
+<!--        <h3> All : </h3>-->
+<!--        <ul>-->
+<!--        {% for file_number in object.file_number.all %}-->
+<!--            <li><a href="{% url 'workday:location_detail' object.file_number location.location %}">{{ location.location }}</li>-->
+<!--        {% endfor %}-->
+<!--        </ul>-->
+<!--    {% else %}-->
+<!--        <label>There are no locations added to this company yet.</label><br>-->
+<!--    {% endif %}-->
+{% endblock content %}

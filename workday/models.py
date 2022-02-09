@@ -1,14 +1,34 @@
+from datetime import date
 from django.db import models
+from django.urls import reverse
+from django import forms
+from profiles.models import Profile
 
 # Create your models here.
 from django.utils import timezone
 
+PAYROLL= [
+    ('fbp', 'FBP'),
+    ('amco', 'AMCO'),]
+
+class Location(models.Model):
+    Location = models.CharField(max_length=20)
 
 class Workday(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    user_info = models.CharField(default='Blank',max_length=50)
-    time_in = models.DateTimeField(blank=True, null=True)
+    file_number = models.IntegerField(primary_key=True)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE) # profile connected to auth.user
+    time_in = models.DateTimeField(default=date.today, null=True)
     time_out = models.DateTimeField(blank=True, null=True)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    sector = models.CharField(max_length = 20)
+    # hours_code = models.CharField(max_length = 5)
+    hours_code = forms.CharField(label='Hours Code', widget=forms.Select(choices=PAYROLL))
+    FBP_payroll = models.CharField(default='$', max_length = 5)
+    AMCO_payroll = models.CharField(default='$', max_length = 5)
 
-    def __str__(self):
-        return self.user_info, self.time_in, self.time_out
+    def get_absolute_url (self) :
+        return reverse('workday:workday_list')
+
+    def _str_(self):
+        return self.location
+

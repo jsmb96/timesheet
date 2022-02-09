@@ -1,0 +1,9 @@
+{% extends '../base.html' %}
+
+{% block title %}Location Detail{% endblock title %}
+
+{% block content %}
+    <h1>{{ location.location }}</h1>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {{ location.location }} <br>
+{% endblock content %}

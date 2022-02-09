@@ -6,25 +6,25 @@ from django.urls import reverse, reverse_lazy
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
-from profiles.models import Profiles
+from profiles.models import Profile
 
 class ProfileList(ListView):
     template_name = 'profiles/profile_list.html'
-    model = Profiles
+    model = Profile
     context_object_name = 'profiles'
 
 class ProfileDetail(DetailView):
-    model = Profiles
+    model = Profile
     template_name = 'profiles/profiles_detail.html'
 
 class ProfilesCreate(CreateView):
-    model = Profiles
-    fields = ['name', 'id', 'email']
+    model = Profile
+    fields = ['profile', 'id', 'location']
     template_name = 'profiles/profiles_new.html' # If not provided, searches for 'profiles/profiles_form.html'
     success_url = reverse_lazy('profiles:profiles_list')
 
 class ProfilesUpdate(UpdateView):
-    model = Profiles
-    fields = ['name', 'id', 'email']
+    model = Profile
+    fields = ['profile', 'id', 'location']
     template_name = 'profiles/profiles_update.html'  # If not provided, searches for 'profiles/profiles_form.html'
     success_url = reverse_lazy('profiles:profiles_list')
