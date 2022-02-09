@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Profile(models.Model):
+class Profile(models.Model): # Need Image field 
     profile = models.ForeignKey(User,primary_key=True, default=1, on_delete=models.CASCADE)
     id = models.IntegerField(default=0) # is it your PK ??
     # email = models.CharField(default='Blank',max_length=50)
