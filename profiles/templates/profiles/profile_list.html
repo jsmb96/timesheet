@@ -6,8 +6,8 @@
     {% if profiles %}
         <table>
         {% for profiles in profiles %}
-            <tr><td>&nbsp;&nbsp;&nbsp;</td><td><a href="{% url 'profiles:profile_detail' profiles.id %}">{{profiles.name}}</a></td>
-                <td><a href="{% url 'profiles:profile_update' profile.id %}" > Edit </a></td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;</td><td><a href="{% url 'profiles:profile_detail' profiles.profile.username %}">{{profiles.profile.username}}</a></td>
+                <td><a href="{% url 'profiles:profile_update' profile.profile %}" > Edit </a></td></tr>
         {% endfor %}
         </table>
     {% else %}

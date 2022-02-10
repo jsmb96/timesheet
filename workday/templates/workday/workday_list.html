@@ -1,0 +1,17 @@
+{% extends '../base_workday.html' %}
+
+{% block title %}workday List{% endblock title %}
+
+{% block content %}
+    {% if user %}<a href="{% url 'workday:workday_create' %}">Create New Workday</a>{% endif %}
+    {% if latest_workday_list %}
+        <table>
+        {% for workday in latest_workday_list %}
+            <tr><td>&nbsp;&nbsp;&nbsp;</td><td><a href="{% url 'workday:workday_detail' workday.id %}">{{ workday.file_number }}</a></td>
+<!--                <td><a href="{% url 'workday:workday_update' workday.id %}" > Edit </a></td></tr>-->
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>No Workdays are available.</p>
+    {% endif %}
+{% endblock content %}

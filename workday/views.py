@@ -4,11 +4,15 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.urls import reverse, reverse_lazy
-from django.views.generic import DetailView, CreateView
+from django.views.generic import DetailView, CreateView, ListView
 
 from workday.forms import WorkdayForm
 from workday.models import Workday,Location,PAYROLL
 
+class WorkdayList(ListView):
+    template_name = 'workday/workday_list.html'
+    model = Workday
+    context_object_name = 'workday'
 
 class WorkdayDetail(DetailView): #object === workday
     model = Workday
