@@ -18,5 +18,4 @@ class Profile(models.Model):
         return self.doctor_title
 
     def get_absolute_url(self): #reverve mapping url
-        return reverse_lazy('profile:profile_detail')
-                            #, kwargs={'pkr': self.profile.profile.username, 'pk': self.pk})
+        return reverse_lazy('profile:profile_detail', kwargs={'pkr': self.profile.profile.username, 'pk': self.pk})
