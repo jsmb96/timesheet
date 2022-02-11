@@ -13,7 +13,7 @@ PAYROLL= [
     ('amco', 'AMCO'),]
 
 class Location(models.Model):
-    location_name = models.CharField(default='', max_length=20)
+    location_name = models.CharField(default = '', max_length=20)
 
     def _str_(self):
         return self.location_name
