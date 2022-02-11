@@ -17,7 +17,7 @@ class ProfileDetail(DetailView):
     model = Profile
     template_name = 'profiles/profiles_detail.html'
 
-class ProfileCreate(CreateView):
+class ProfileCreate(CreateView): # Is it working ???
     model = Profile
     fields = ['profile', 'doctor_title', 'image']
     template_name = 'profiles/profiles_new.html' # If not provided, searches for 'profiles/profiles_form.html'
