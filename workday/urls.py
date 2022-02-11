@@ -1,5 +1,7 @@
 from django.urls import re_path
 from django.utils import timezone
+from datetime import date
+from datetime import datetime
 from django.views.generic import View, ListView, UpdateView, DetailView
 
 from workday import views
@@ -9,14 +11,14 @@ from workday.views import WorkdayDetail, WorkdayCreate, LocationDetail
 
 app_name = 'workday'
 urlpatterns = [
-    # List latest 5 workdays, ex.: /workday/
-    # re_path(r'^$',
-    #         ListView.as_view(
-    #             # model = workday,
-    #             queryset=Workday.objects.filter(date__lte=timezone.now()).order_by(Workday.time_in)[:5],
-    #             context_object_name='latest_workday_list',
-    #             template_name=' workday/workday_list.html'),
-    #             name='workday_list'),
+    # # List latest 5 workdays, ex.: /workday/
+    re_path(r'^$',
+            ListView.as_view(
+                model = Workday,
+                queryset=Workday.objects.filter(time_in__lte=datetime.now()).order_by('time_in')[:5],
+                context_object_name='latest_workday_list',
+                template_name=' workday/workday_list.html'),
+                name='workday_list'),
 
     # workday details, ex.: /workday/1/
     re_path(r'^(?P<pk>\d+)/$',
