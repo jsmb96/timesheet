@@ -8,7 +8,6 @@
         <table>
         {% for workday in latest_workday_list %}
             <tr><td>&nbsp;&nbsp;&nbsp;</td><td><a href="{% url 'workday:workday_detail' workday.id %}">{{ workday.file_number }}</a></td>
-<!--                <td><a href="{% url 'workday:workday_update' workday.id %}" > Edit </a></td></tr>-->
         {% endfor %}
         </table>
     {% else %}

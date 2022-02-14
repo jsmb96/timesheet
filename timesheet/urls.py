@@ -17,11 +17,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-
+from timesheet import views
 from timesheet import settings
 
 urlpatterns = [
-    path('profiles/', include('profiles.urls')),
+    path('', views.home, name='home'),
+    path('profile/', include('profile.urls')),
     path('workday/', include('workday.urls')),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),

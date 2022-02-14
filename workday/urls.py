@@ -39,14 +39,14 @@ urlpatterns = [
     #         name='workday_update'),
 
     # workday location details, ex: /workday/1/locations/1/
-    re_path(r'^workdays/(?P<pkr>\d+)/locations/(?P<pk>\d+)/$',
+    re_path(r'^workday/(?P<pkr>\d+)/locations/(?P<pk>\d+)/$',
             DetailView.as_view(
                 model=Location,
                 template_name='workday/location_detail.html'),
                 name='location_detail'),
 
     # # Create a workday location, ex.: /workday/1/locations/create/
-    # re_path(r'^workdays/(?P<pk>\d+)/locationes/create/$',
+    # re_path(r'^workdays/(?P<pk>\d+)/locations/create/$',
     #         locationCreate.as_view(),
     #         name='location_create'),
 

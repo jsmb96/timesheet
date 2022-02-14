@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'profiles.apps.ProfilesConfig',
+    'profile.apps.ProfileConfig',
     'workday.apps.WorkdayConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,7 +120,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL='/blogs/'
+LOGIN_REDIRECT_URL='/profile/'
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

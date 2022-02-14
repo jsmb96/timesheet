@@ -19,10 +19,10 @@ class WorkdayDetail(DetailView): #object === workday
     template_name = 'workday/workday_detail.html'
     extra_context = {'PAYROLL': PAYROLL}
 
+
 class LocationDetail(DetailView): #object === workday
     model = Location
     template_name = 'location/location_detail.html'
-
 
 class WorkdayCreate(LoginRequiredMixin, CreateView):
     model = Workday

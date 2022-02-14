@@ -3,13 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Django Generated{% endblock title %}</title>
+    <title>{% block title %}Timesheet Homepage{% endblock title %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
 <body>
     <div>
         <table width="100%">
             <tr>
-                <td colspan="75%"><a href="{% url 'profiles:profile_list' %}"> HOME </a></td>
+                <td colspan="75%">TIMESHEET HOMEPAGE</td>
                 <td colspan="25%">
                     {% if profile.is_authenticated %}
                         <p><a class="" href="{% url 'logout' %}">Log Out</a></p>
@@ -20,7 +21,17 @@
             </tr>
         </table>
     </div>
-    <>
+    <div>&nbsp;</div>
+    <div>
+        <table width="100%">
+            <tr><td>&nbsp;&nbsp;&nbsp;</td><td><a href="profile/"> Profiles </a></td>
+            <td><a href="workday/" > Workdays </a></td>
+            <td><a href="login/" > Login </a></td>
+            <td><a href="login/" > Logout </a></td>
+            <td><a href="admin/" > Admin </a></td></tr>
+        </table>
+    </div>
+
     <div>
         {% block content %}
 

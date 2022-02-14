@@ -3,7 +3,7 @@ from datetime import datetime
 from django.db import models
 from django.urls import reverse_lazy
 from django import forms
-from profiles.models import Profile
+from profile.models import Profile
 
 # Create your models here.
 from django.utils import timezone
@@ -13,6 +13,7 @@ PAYROLL= [
     ('amco', 'AMCO'),]
 
 class Location(models.Model):
+    #location_id = models.IntegerField(primary_key=True, default=1)
     location_name = models.CharField(default = '', max_length=20)
 
     def _str_(self):
