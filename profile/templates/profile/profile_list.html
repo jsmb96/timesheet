@@ -1,0 +1,16 @@
+{% extends '../base.html' %}
+
+{% block title %}Profile List{% endblock title %}
+
+{% block content %}
+    {% if profile %}
+        <table>
+        {% for p in profile %}
+            <tr><td>&nbsp;&nbsp;&nbsp;</td><td><a href="{% url 'profile:profile_detail' p.pk %}">{{p.profile.username}}</a></td>
+                <td><a href="{% url 'profile:profile_update' p.pk %}" > Edit </a></td></tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>No profiles are available.</p>
+    {% endif %}
+{% endblock content %}

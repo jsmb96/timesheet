@@ -1,0 +1,11 @@
+{% extends '../base.html' %}
+
+{% block title %}Profile Detail{% endblock title %}
+
+{% block content %}
+    <h1>{{ profile.username }}</h1>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {{ profile.username }} <br>
+    {{ profile.doctor_title }} <br>
+    {{ profile.image }} <br>
+{% endblock content %}
